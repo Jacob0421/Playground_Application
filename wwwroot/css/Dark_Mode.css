@@ -7,8 +7,8 @@ body {
 .card {
     background-color: #343a40;
     color: white;
-    width: 56rem;
-    height: 60rem;
+    width: 28rem;
+    height: 30rem;
     text-overflow: ellipsis;
     overflow: hidden;
 }
