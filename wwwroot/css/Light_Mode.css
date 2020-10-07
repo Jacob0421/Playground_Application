@@ -1,0 +1,13 @@
+﻿body {
+    background-color: white;
+    color: black;
+}
+
+.card {
+    background-color: #E8E8E8;
+    color: black;
+    width: 28rem;
+    height: 30rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

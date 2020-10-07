@@ -1,0 +1,19 @@
+﻿
+body {
+    background-color: #2B2E34;
+    color: white;
+}
+
+.card {
+    background-color: #343a40;
+    color: white;
+    width: 56rem;
+    height: 60rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+header {
+/*    background-color: #222222;
+    color: white;*/
+}

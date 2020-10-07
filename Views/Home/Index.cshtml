@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Playground_Application.Models.Video>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Playground!</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width" , initial-scale-1 />
+
+    @*<link rel="stylesheet" href="~/css/Dark_Mode.css" />*@
+    <link rel="stylesheet" href="~/css/Light_Mode.css" />
+    <style>
+        .card{
+            display: inline-block;
+            box-shadow: rgba(0,0,0,0.2) 3px 3px 3px;
+        }
+    </style>
+</head>
+<body>
+    <strong>
+        <a asp-action="AddVideo">Add a video</a>
+    </strong>
+    <br />
+
+        @foreach (var video in Model)
+        {
+            <div class="card" >
+                <div class="embed-responsive-1by1; text-center" style="padding-top: 2rem;">
+                    <iframe src="@video.VideoUrl" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen width="245"></iframe>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">@video.Title</h5>
+                    <p class="card-text">@video.Description</p>
+                </div>
+            </div>
+        }
+
+</body>
+</html>
