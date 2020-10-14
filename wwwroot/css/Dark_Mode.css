@@ -1,5 +1,6 @@
 ﻿
 body {
+    margin-left: 0;
     background-color: #2B2E34;
     color: white;
 }
@@ -7,13 +8,52 @@ body {
 .card {
     background-color: #343a40;
     color: white;
-    width: 28rem;
-    height: 30rem;
+    width: 18rem;
+    height: 22rem;
     text-overflow: ellipsis;
     overflow: hidden;
 }
 
-header {
-/*    background-color: #222222;
-    color: white;*/
+.SideNav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #343a40;
+    overflow-x: hidden;
+    padding-top: 3.75rem;
+    transition: 0.5s;
 }
+
+    .SideNav a {
+        padding: .5rem .5rem .5rem 2rem;
+        text-decoration: none;
+        font-size: 25px;
+        color: #808080;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .SideNav a:hover {
+        color: white;
+        background-color: #808080;
+    }
+
+    .SideNav .btn-close {
+        position: absolute;
+        top: 0;
+        right: 1.5rem;
+        font-size: 2rem;
+        margin-left: 3rem;
+    }
+    
+    .SideNav .btn-close:hover {
+        background-color: #343a40;
+    }
+
+#btn-open {
+        font-size: 2.5rem;
+        padding-left: 2rem;
+    }

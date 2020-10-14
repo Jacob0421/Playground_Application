@@ -38,6 +38,10 @@ namespace Playground_Application.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult ShowDivsOnSelect()
+        {
+            return View();
+        }
 
         public IActionResult Privacy()
         {

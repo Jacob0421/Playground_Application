@@ -4,18 +4,46 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Playground_Application</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width" , initial-scale-1 />
+
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/css/Dark_Mode.css" />
-    @*<link rel="stylesheet" href="~/css/Light_Mode.css" />*@
+    <link rel="stylesheet" href="~/css/Light_Mode.css" />
+    <script src="~/js/SideNav.js"></script>
 </head>
-<body>
+<body style="margin-left: 0;">
     <header>
         <nav class="navbar bg-dark navbar-dark">
             <a class="navbar-brand " href="Landing_Page">Home</a>
         </nav>
     </header>
-    <div class="container">
+
+    <div>
+        @*
+        Side Navigation Bar
+        instructions found at:
+        https://www.w3schools.com/howto/howto_js_sidenav.asp
+        *@
+        <div id="SideNav" class="SideNav">
+            <a href="javascript:void(0)" class="btn-close" onclick="closeSideNav()">&times;</a>
+            <a asp-action="Index">Cards with Embedded Videos</a>
+            <a asp-action="ShowDivsOnSelect">Dynamic div Showing</a>
+        </div>
+
+        <span id="btn-open" onclick="OpenSideNav()">&#9776;</span>
+    </div>
+
+    <div class="container" id="contentContainer">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -23,7 +51,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2020 - Playground_Application - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2020 - Playground_Application - Jacob Roberts
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

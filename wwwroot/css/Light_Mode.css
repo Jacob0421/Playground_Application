@@ -1,6 +1,7 @@
 ﻿body {
     background-color: white;
     color: black;
+    margin-left:0;
 }
 
 .card {
@@ -10,4 +11,48 @@
     height: 30rem;
     text-overflow: ellipsis;
     overflow: hidden;
+}
+
+.SideNav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #E8E8E8;
+    overflow-x: hidden;
+    padding-top: 3.75rem;
+    transition: 0.5s;
+}
+
+    .SideNav a {
+        padding: .5rem .5rem .5rem 2rem;
+        text-decoration: none;
+        font-size: 25px;
+        color: #808080;
+        display: block;
+        transition: 0.3s;
+    }
+
+        .SideNav a:hover {
+            color: #343a40;
+            background-color: #E8E8E8;
+        }
+
+    .SideNav .btn-close {
+        position: absolute;
+        top: 0;
+        right: 1.5rem;
+        font-size: 2rem;
+        margin-left: 3rem;
+    }
+
+        .SideNav .btn-close:hover {
+            background-color: #343a40;
+        }
+
+#btn-open {
+    font-size: 2.5rem;
+    padding-left: 2rem;
 }

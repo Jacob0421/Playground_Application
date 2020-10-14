@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Playground_Application.Models.Video>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Playground!</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width" , initial-scale-1 />
+
+    <link rel="stylesheet" href="~/css/Dark_Mode.css" />
+    @*<link rel="stylesheet" href="~/css/Light_Mode.css" />*@
+    <link rel="stylesheet" href="~/css/site.css" />
+
+</head>
+<body>
+    @* How to hide a div on select box *@
+    <div id="HiddenDivOnSelect">
+        <select id="SelectDiv" style="color:black;">
+            <option value="" disabled selected>Show a Div</option>
+            <option value="Div1">Div 1</option>
+            <option value="Div2">Div 2</option>
+        </select>
+        <div id="DivContainer">
+            <div id="Div1" class="hidden">Hello 1 is shown!</div>
+            <div id="Div2" class="hidden">Hello 2 is shown!</div>
+        </div>
+        <script>
+            $('#SelectDiv').on('change', function () {
+                $("#DivContainer div").addClass("hidden");
+                var selectedDiv = $('#SelectDiv').val();
+
+                $("#" + selectedDiv).removeClass("hidden");
+            });
+        </script>
+    </div>
+</body>
+</html>
