@@ -109,7 +109,36 @@ namespace Playground_Application.Controllers
                 ViewBag.Result = "Incorrect Username.";
             }
             return View("AddUserAndLogin");
-            
+        }
+
+        public IActionResult AddUser()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddUser(User newUser, string Password)
+        {
+            byte[] salt = new byte[256 / 8];
+            using (var rng = RandomNumberGenerator.Create())
+            {
+                rng.GetBytes(salt);
+            }
+
+            newUser.Salt = Convert.ToBase64String(salt);
+
+            newUser.PasswordHash = (Convert.ToBase64String(KeyDerivation.Pbkdf2(
+                    password: Password,
+                    salt: salt,
+                    prf: KeyDerivationPrf.HMACSHA1,
+                    iterationCount: 10000,
+                    numBytesRequested: 256 / 8
+                    )));
+
+            _UserList.AddUser(newUser);
+            ViewBag.Result = "User has been added successfully";
+
+            return View("AddUserAndLogin");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -24,8 +24,7 @@
         https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/consumer-apis/password-hashing?view=aspnetcore-3.1
         https://stackoverflow.com/questions/52146528/how-to-validate-salted-and-hashed-password-in-c-sharp
     *@
-    <input type="button" asp-controller="Home" asp-action="AddUser" value="Add User" class="btn-primary" />
-
+    <a button class="btn btn-primary" asp-action="AddUser">Add User</a>
     <p class="text-danger"> @ViewBag.Result</p>
 
     <form asp-action="Login" method="post">
