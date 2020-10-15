@@ -19,13 +19,20 @@
     <script src="~/js/SideNav.js"></script>
 </head>
 <body>
+    @*
+        Hashed Passwords and Login help came from:
+        https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/consumer-apis/password-hashing?view=aspnetcore-3.1
+        https://stackoverflow.com/questions/52146528/how-to-validate-salted-and-hashed-password-in-c-sharp
+    *@
+    <input type="button" asp-controller="Home" asp-action="AddUser" value="Add User" class="btn-primary" />
+
     <p class="text-danger"> @ViewBag.Result</p>
 
     <form asp-action="Login" method="post">
         <label class="text-xl-center">Login</label> <br />
-        <input type="text" placeholder="Username" name="usernameIn"required style="color: black;"/> <br />
-        <input type="password" placeholder="Password" name="passwordIn" required style="color: black;"/> <br />
-        <input type="submit" value="Submit" style="color: black;"/>
+        <input type="text" placeholder="Username" name="usernameIn" required style="color: black;" /> <br />
+        <input type="password" placeholder="Password" name="passwordIn" required style="color: black;" /> <br />
+        <input type="submit" value="Submit" style="color: black;" />
     </form>
 </body>
 </html>

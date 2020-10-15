@@ -80,25 +80,34 @@ namespace Playground_Application.Controllers
         [HttpPost]
         public IActionResult Login (string passwordIn, string usernameIn)
         {
+        /// Hashed Passwords and Login help came from:
+        /// https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/consumer-apis/password-hashing?view=aspnetcore-3.1
+        /// https://stackoverflow.com/questions/52146528/how-to-validate-salted-and-hashed-password-in-c-sharp
+            
+
             User userIn = _UserList.GetUserbyUsername(usernameIn);
+            if (userIn != null)
+            {
+                var storedSalt = Convert.FromBase64String(userIn.Salt);
 
-            var storedSalt = Convert.FromBase64String(userIn.Salt);
+                var questionableHash = Convert.ToBase64String(KeyDerivation.Pbkdf2(
+                    password: passwordIn,
+                    salt: storedSalt,
+                    prf: KeyDerivationPrf.HMACSHA1,
+                    iterationCount: 10000,
+                    numBytesRequested: 256 / 8
+                    ));
 
-            var questionableHash = Convert.ToBase64String(KeyDerivation.Pbkdf2(
-                password: passwordIn,
-                salt: storedSalt,
-                prf: KeyDerivationPrf.HMACSHA1,
-                iterationCount: 10000,
-                numBytesRequested: 256 / 8
-                ));
+                var storedHash = userIn.PasswordHash;
 
-            var storedHash = userIn.PasswordHash;
-
-            if (questionableHash == storedHash)
-                ViewBag.Result = "Yay!";
-            else
-                ViewBag.Result = "Something Went Wrong...";
-
+                if (questionableHash == storedHash)
+                    ViewBag.Result = "Yay!";
+                else
+                    ViewBag.Result = "Something Went Wrong...";
+            } else
+            {
+                ViewBag.Result = "Incorrect Username.";
+            }
             return View("AddUserAndLogin");
             
         }
