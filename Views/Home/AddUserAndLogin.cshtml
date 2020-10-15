@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width" , initial-scale-1 />
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/Dark_Mode.css" />
+    @*<link rel="stylesheet" href="~/css/Light_Mode.css" />*@
+    <script src="~/js/SideNav.js"></script>
+</head>
+<body>
+    <p class="text-danger"> @ViewBag.Result</p>
+
+    <form asp-action="Login" method="post">
+        <label class="text-xl-center">Login</label> <br />
+        <input type="text" placeholder="Username" name="usernameIn"required style="color: black;"/> <br />
+        <input type="password" placeholder="Password" name="passwordIn" required style="color: black;"/> <br />
+        <input type="submit" value="Submit" style="color: black;"/>
+    </form>
+</body>
+</html>

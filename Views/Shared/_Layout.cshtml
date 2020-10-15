@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/css/Dark_Mode.css" />
-    <link rel="stylesheet" href="~/css/Light_Mode.css" />
+    @*<link rel="stylesheet" href="~/css/Light_Mode.css" />*@
     <script src="~/js/SideNav.js"></script>
 </head>
 <body style="margin-left: 0;">
@@ -38,6 +38,8 @@
             <a href="javascript:void(0)" class="btn-close" onclick="closeSideNav()">&times;</a>
             <a asp-action="Index">Cards with Embedded Videos</a>
             <a asp-action="ShowDivsOnSelect">Dynamic div Showing</a>
+            <a asp-action="HashedPasswords">Password Hashing</a>
+            <a asp-action="AddUserAndLogin">Create User and Login</a>
         </div>
 
         <span id="btn-open" onclick="OpenSideNav()">&#9776;</span>

@@ -26,6 +26,7 @@ namespace Playground_Application
         {
             services.AddControllersWithViews();
             services.AddSingleton<IVideoRepository, VideoRepository>();
+            services.AddSingleton<IUserRepository, UserRepository>();
 
         }
 

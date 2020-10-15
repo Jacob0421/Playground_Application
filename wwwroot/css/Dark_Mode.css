@@ -5,6 +5,10 @@ body {
     color: white;
 }
 
+input select {
+    color: black;
+}
+
 .card {
     background-color: #343a40;
     color: white;

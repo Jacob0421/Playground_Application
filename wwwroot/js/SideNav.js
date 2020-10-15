@@ -15,5 +15,5 @@ function OpenSideNav() {
 
 function closeSideNav() {
     document.getElementById("SideNav").style.width = "0";
-    document.getElementById("contentContainer").style.marginLeft = "0";
+    document.getElementById("contentContainer").style.marginLeft = "250px";
 }
